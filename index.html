@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="stylesheet" href="style.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List </title>
-    <link rel="stylesheet" href="style.css">
+    <title>To-Do List App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="container">
-        <h1>To-Do List (oi syarizah) </h1>
-        <input type="text" id="taskInput" placeholder="Tambah tugas...">
+        <h2>✅ To-Do List App</h2>
+    
+
+    <!-- 🔹 AUTH SECTION (Register & Login) -->
+    <div id="authSection">
+        <input type="email" id="email" placeholder="Masukkan Email">
+        <input type="password" id="password" placeholder="Masukkan Password">
+        <button onclick="register()">Daftar</button>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- 🔹 APP SECTION (Selepas Login) -->
+    <div id="appSection" style="display: none;">
+        <input type="text" id="task" placeholder="Tambah tugasan...">
         <button onclick="addTask()">Tambah</button>
         <ul id="taskList"></ul>
+        <button onclick="logout()" style="background: gray;">Logout</button>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Muatkan script.js selepas HTML -->
+    <script defer src="script.js"></script>
 </body>
 </html>
